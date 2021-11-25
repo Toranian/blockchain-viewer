@@ -11,47 +11,35 @@
     <title>CSC 130 - Project 2</title>
   </head>
   <body>
-    <div id="landing">
-      <div class="title">
-        <h1>Bitcoin Blockchain Explorer</h1>
-      </div>
-
-  <script src="./src/js/sketch.js"></script>
-      <p style="color: white; margin: 3vh">
-        Are you familiar with Bitcoin and the Bitcoin blockchain?
-      </p>
-      <div class="inline_container">
-        <a class="home-button" onclick="unFamilar()" href="#bitcoin-body">Yes</a>
-        <a class="home-button" onclick="unFamilar()" href="#bitcoin-body">No</a>
-      </div>
-    </div>
-
     <div class="body" id="bitcoin-body">
-     
       <div class="title-container">
-
-        <h1>Welcome to Crappy Block Explorer!</h1>
-        <br>
+        <h1>Bitcoin Blockchain Explorer</h1>
         <div id="familiar">
-          <p id="info">
-            So it appears that you don't know what Bitcoin is. That's fine! I won't judge you my guy. 
-            Bitcoin is a decentralized crypto currency that shows all transactions on a public ledger. 
-          </p>
-          <br>
           <p>
             To view a block on the Bitcoin blockchain, enter an integer from 0 to around 700,000 for best results.
           </p>
+          <p id="large-warning">
+            <strong>Note: </strong> If you enter a large number, the information may load slowly. Please be patient.
+          </p>
+          <h3>
+            Some example blocks to try:
+          </h3>
+          <ul id="example-list">
+            <li><strong>0</strong> - The Genesis block (the first block on the blockchain)</li>
+            <li><strong>170</strong> - The first block on the blockchain with a non-coinbase transaction.</li>
+            <li><strong>700,000</strong> - This block has a lot of transactions.</li>
+          </ul>
+         
         </div>
         <form action="">
           <label for="">Enter a block hash or height: </label>
           <input type="text" id="block_input" />
+          <br>
+          
         </form>
-        <div class="input">
-          <p>Or <a id="latest" onclick="latestBlock()">get the latest block:</a></p>
-          <button onclick="getBlock()" class="button">Latest Block</button>
-        </div>
-        <a href="./src/pages/home.html">Homepage</a>
+        <br>
         <button onclick="getBlock()" class="button" id="search">Search</button>
+        <br>
     
       </div>
       <div id="status"></div>
@@ -73,8 +61,13 @@
           </div>
         </div>
       </div>
+      <footer>
+        <h4>Made with ❤️ by Isaac</h4>
+        <a href="https://github.com/Toranian/blockchain-viewer" target="_blank"><strong>GitHub</strong></a>
+      </footer>
     </body>
     </div>
   <script src="./src/js/main.js"></script>
   <script src="https://unpkg.com/wtf_wikipedia"></script>
+
 </html>
