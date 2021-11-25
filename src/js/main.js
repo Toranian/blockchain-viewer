@@ -16,9 +16,6 @@ function getBlock() {
 
   if (block.length == 0) {
     API = `https://blockchain.info/latestblock/`;
-  }
-
-  if (block.length == 0) {
     $("#status").html("<h2>Please enter an integer.</h2>");
   } else {
     $("#status").html("<h2>Loading...</h2>");
@@ -29,26 +26,20 @@ function getBlock() {
     });
     $("#status").html("");
   }
+
 }
 
 function unFamilar() {
   $("#familiar").css("display", "block");
 }
 
-function transactionDetails(data) {
-  // <p>Transaction ID: ${data.hash}</p>
-  let x = `<div><h3>Hey</h3></div>`;
-  return x;
-}
-
 function showTransactions() {
   let transactions = blockData.tx;
-  let i = 0;
-  let x = `<div><h3>Hey</h3></div>`;
-  for (let tx in transactions) {
-    // $("#transaction-list").append(`<ul>${transactionsHTML}<div id="transactions_details"></div></ul>`);
-    x = document.createElement(x);
-    $("transaction-list").append(x);
-    i++;
+  let transactionsHTML = ""
+
+  for (let tx of transactions) {
+    transactionsHTML = tx['hash'];
+    console.log(tx);
+    $("#transaction-list").append(`<ul>${transactionsHTML}<div id="transactions_details"></div></ul>`);
   }
 }
