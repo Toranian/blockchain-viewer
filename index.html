@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script> -->
     <link rel="stylesheet" href="./src/css/style.css" />
     <title>CSC 130 - Project 2</title>
   </head>
@@ -14,6 +16,7 @@
         <h1>Bitcoin Blockchain Explorer</h1>
       </div>
 
+  <script src="./src/js/sketch.js"></script>
       <p style="color: white; margin: 3vh">
         Are you familiar with Bitcoin and the Bitcoin blockchain?
       </p>
@@ -29,7 +32,16 @@
 
         <h1>Welcome to Crappy Block Explorer!</h1>
         <br>
-        <div id="familiar"></div>
+        <div id="familiar">
+          <p id="info">
+            So it appears that you don't know what Bitcoin is. That's fine! I won't judge you my guy. 
+            Bitcoin is a decentralized crypto currency that shows all transactions on a public ledger. 
+          </p>
+          <br>
+          <p>
+            To view a block on the Bitcoin blockchain, enter an integer from 0 to around 700,000 for best results.
+          </p>
+        </div>
         <form action="">
           <label for="">Enter a block hash or height: </label>
           <input type="text" id="block_input" />
@@ -39,7 +51,7 @@
           <button onclick="getBlock()" class="button">Latest Block</button>
         </div>
         <a href="./src/pages/home.html">Homepage</a>
-        <button onclick="getBlock()" class="button">Search</button>
+        <button onclick="getBlock()" class="button" id="search">Search</button>
     
       </div>
       <div id="status"></div>
@@ -54,11 +66,15 @@
           <div id="next_block"></div>
           <button class="button" onclick="showTransactions()">Show transactions</button>
           <div class="card" id="transactions">
-            <div id="transaction-list"></div>
+            <h3>Transactions</h3>
+              <ol id="transaction-list">
+
+              </ol>
           </div>
         </div>
       </div>
     </body>
     </div>
   <script src="./src/js/main.js"></script>
+  <script src="https://unpkg.com/wtf_wikipedia"></script>
 </html>

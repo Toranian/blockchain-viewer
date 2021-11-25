@@ -24,7 +24,6 @@ function getBlock() {
     $("#status").html("<h2>Loading...</h2>");
     $("#block").css("display", "block");
     $.get(`${API}/${block}`, function getData(data) {
-      console.log(data);
       showBlock(data);
       blockData = data;
     });
@@ -33,22 +32,23 @@ function getBlock() {
 }
 
 function unFamilar() {
-  console.log("unfamilar");
+  $("#familiar").css("display", "block");
+}
 
-  let unFamiliarText = `
-  <p id="info">So it appears that you don't know what Bitcoin is. That's fine! I won't judge you my guy. Bitcoin is a decentralized crypto currency that shows all transactions on a public ledger. </p><br><p>To view a block on the Bitcoin blockchain, enter an integer from 0 to aroudn 700,000 for best results.</p>
-  `;
-  $("#familiar").html(unFamiliarText);
+function transactionDetails(data) {
+  // <p>Transaction ID: ${data.hash}</p>
+  let x = `<div><h3>Hey</h3></div>`;
+  return x;
 }
 
 function showTransactions() {
   let transactions = blockData.tx;
-  let transactionsHTML = "";
-  console.log(transactions);
+  let i = 0;
+  let x = `<div><h3>Hey</h3></div>`;
   for (let tx in transactions) {
-    // transactionsHTML += `<p>Transaction: ${tx[0]["hash"]}</p>`;
-    console.log(tx[0]['hash']);
+    // $("#transaction-list").append(`<ul>${transactionsHTML}<div id="transactions_details"></div></ul>`);
+    x = document.createElement(x);
+    $("transaction-list").append(x);
+    i++;
   }
-  console.log(transactionsHTML);
-  $("#transactions").html(transactionsHTML);
 }

@@ -139,6 +139,10 @@ input {
   flex-direction: column;
 }
 
-#transactions {
+/* #transactions {
+  display: none;
+} */
+
+#familiar {
   display: none;
 }
