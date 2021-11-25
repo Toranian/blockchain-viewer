@@ -9,7 +9,12 @@ body {
   scroll-behavior: smooth;
 }
 
-* {
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+body {
   margin: 0;
   padding: 0;
 }
@@ -143,6 +148,51 @@ input {
   display: none;
 } */
 
-#familiar {
-  display: none;
+
+#example-list ul{
+  padding-left: 15px;
+}
+
+#search {
+  width: 100%;
+}
+#block_input {
+  width: 100%;
+  border: 2px solid black;
+  background-color: white;
+  padding: 10px 15px;
+  font-family: "Fira Mono", monospace;
+  font-weight: bold;
+  transition-duration: 0.2s;
+  box-sizing: border-box;
+}
+
+p, label {
+  font-size: 18px;
+}
+
+#block {
+  margin-top: 2vh;
+}
+
+footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer * {
+  padding: 10px;
+}
+
+#large-warning {
+  color: rgb(255, 45, 45);
+}
+
+.card {
+  overflow: scroll;
 }
