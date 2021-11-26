@@ -18,11 +18,10 @@ function getBlock() {
     API = `https://blockchain.info/latestblock/`;
     $("#status").html("<h2>Please enter an integer.</h2>");
   } else {
-    $("#status").html("<h2>Loading...</h2>");
-    $("#block").css("display", "block");
     $.get(`${API}/${block}`, function getData(data) {
       showBlock(data);
       blockData = data;
+      $("#block").css("display", "block");
     });
     $("#status").html("");
   }
@@ -42,4 +41,5 @@ function showTransactions() {
     console.log(tx);
     $("#transaction-list").append(`<ul>${transactionsHTML}<div id="transactions_details"></div></ul>`);
   }
+  $("#transactions").css("display", "block");
 }
